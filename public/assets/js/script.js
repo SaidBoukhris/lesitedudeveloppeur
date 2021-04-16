@@ -1,14 +1,9 @@
-/* ========================================== 
-scrollTop() >= 50
-Should be equal the height of the header
-========================================== */
-
 $(window).scroll(function() {
-    if ($(window).scrollTop() >= 400) {
-        $("nav").addClass("fixed-header");
-        $("nav p").addClass("visible-title");
+    if ($(window).scrollTop() >= 150) {
+        $("nav").addClass("fixedHeader");
+        $("nav p").addClass("fixedTitle");
     } else {
-        $("nav").removeClass("fixed-header");
-        $("nav p").removeClass("visible-title");
+        $("nav").removeClass("fixedHeader");
+        $("nav p").removeClass("fixedTitle");
     }
 });
