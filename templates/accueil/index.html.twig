@@ -69,7 +69,7 @@
     <div class="accueil_aside_cards">
     {% for category in categories %}
         <div class="accueil_aside_cards_card">
-            <div class="accueil_aside_cards_card_img" style="background-image: url({{asset('assets/images/carte.jpg')}});">
+            <div class="accueil_aside_cards_card_img" style="background-image: url({{asset ('assets/images/carte.jpg')}});">
                 <h4 class="accueil_aside_cards_card_title">{{ category.name }}</h4> 
             </div>
             <div class="accueil_aside_cards_card_body">
@@ -79,23 +79,30 @@
                         <p class="accueil_aside_cards_card_body_article_like">{{ article.likes }} j'aime | {{ article.dislikes }} j'aimes pas</p>
 
                     {% else %}
-                        <p class="accueil_aside_cards_card_body_article_0">
+                    <p class="accueil_aside_cards_card_body_article_0">
                         Aucun article dans cette catégorie
                     </p>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        {% else %}<div class="accueil_aside_cards_card">
-                <div class="accueil_aside_cards_card_img" style="background-image: url({{asset('assets/images/ebih-il-mesopotamie-histoire.jpg')}});">
-                    <h4 class="accueil_aside_cards_card_title">{{ category.name }}</h4>
-                </div>
-            </div>
+    {% else %}
+        <div class="accueil_aside_cards_card">
+            <h4 class="accueil_aside_cards_card_title">Aucune catégorie</h4>
+        </div>
+        <div class="accueil_aside_cards_card">
+            <h4 class=""> 
             {% if not app.user %}
-                <a href="{{ path('app_login') }}">Connecter vous pour ajouter un article</a> ou  <a href="{{ path('app_register') }}">créer un compte</a>
-            {% endif %}
+                <a href="{{ path('app_login') }}">Connecter vous pour ajouter un article</a>
+            {% endif %}</h4>
+        </div>
+        <div class="accueil_aside_cards_card">
+            <h4 class=""> 
+            {% if not app.user %}
+                <a href="{{ path('app_login') }}"><a href="{{ path('app_register') }}">Créer un compte</a>
+            {% endif %}</h4>
+        </div>
     {% endfor %}
     </div>
-
 </aside>
 {% endblock %}
