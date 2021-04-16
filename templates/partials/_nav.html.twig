@@ -83,14 +83,12 @@
             <li class="navlink">
                 <!-- Use any element to open the sidenav -->
                 {% if app.user %}
-                    <a href="#" onclick="openNav()">
-                        <div class="avatar">
+                    <a class="link avatar" href="#" onclick="openNav()">
                             <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
-                            {# <span>{{ app.user.pseudo }}</span> #}
-                        </div>
+                            {{ app.user.name }} {{ app.user.firstname }}
                     </a>
                 {% else %}
-                    <a  class="link" href="#" onclick="openNav()">Se connecter | S'inscrire</a>
+                    <a class="link" href="#" onclick="openNav()">Se connecter | S'inscrire</a>
                 {% endif %}
             </li>
         <ul>

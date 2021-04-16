@@ -2,13 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %} | Histoire du monde</title>
-        {% block stylesheets %} {% endblock %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="S.D.V"/>
+        <meta name="description" content="S.D.V | Le Site Du Dev"/>
+        <meta name="author" content="Saïd Boukhris"/>
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.ico')}}" />
+        {% block stylesheets %} 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/main.css')}}">
             <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/header.css')}}">
             <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/flash.css')}}">
             <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/root.css')}}">
+        {% endblock %}
+        <title>Le site du dev | {% block title %}{% endblock %} </title>
     </head>
     
     <body>
@@ -24,9 +30,9 @@
             </div>
         </div> 
         {% block javascripts %} {% endblock %}
-          
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <script src="{{ asset('/assets/js/script.js')}}"></script>
-            <script src="{{ asset('/assets/js/sidenav.js')}}"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="{{ asset('/assets/js/script.js')}}"></script>
+        <script src="{{ asset('/assets/js/sidenav.js')}}"></script>
     </body>
 </html>
