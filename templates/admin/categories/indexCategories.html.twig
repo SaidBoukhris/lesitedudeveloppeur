@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+<h2>{{ pluralize(categories|length, 'catégorie') }}</h2>
+
+<article class="page_les_categories">
+    <div class="categories_cards">
+        {% for category in categories %}
+        <div class="categories_card">
+            <div class="categories_card_img" style="background-image: url({{asset('assets/images/carte.jpg')}});">
+                <h4 class="categories_card_title"><b>{{ category.name }}</b></h4> 
+            </div>
+            <div class="categories_card_body">
+                <a href="{{ path('admin_categories_show', {'id': category.id}) }}">En savoir plus <span>&#8594;</span></a>
+            </div>
+        </div>
+        {% else %}
+            <p>Aucune catégorie en ce moment
+            <a href="{{ path('admin_categories_add') }}">Ajouter une catégorie <span>&#8594;</span></a></p>
+        {% endfor %}
+    </div>
+</article>
+
+{% endblock %}
