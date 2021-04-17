@@ -1,4 +1,29 @@
 <header id="header" class="header">
+    <div id="sidenav" class="sidenav">
+        <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <div class="sidenavBtn">
+            {% if app.user %}
+                <div class="sidenavAvatar">
+                    <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
+                    <span>{{ app.user.pseudo }}</span>
+                </div>
+                <div class="sidenavLink">
+                    <a class="link" href="{{path('users_account_accueil')}}">Mon compte</a>
+                    <a class="link" href="{{path('users_articles_accueil')}}">Mes Articles</a>
+                    <a class="link" href="{{path('app_accueil')}}">À propos</a>
+                    <a class="link" href="{{path('youtube_home')}}">Youtube</a>
+                    <a class="link" href="{{path('app_articles_accueil')}}">Les Articles</a>
+                    <a class="link" href="{{path('app_categories_index')}}">Categories</a>
+                    <a class="link" href="{{path('app_logout')}}">Déconnexion</a>
+                </div>
+            {% else %}
+                <div class="sidenavLink">
+                    <a class="link" href="{{path('app_login')}}">Se connecter</a>
+                    <a class="link" href="{{path('app_register')}}">S'inscrire</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
     {% if article.thumb is defined %}
         <div class="headerBanner"style="background-image: url({{article.thumb}});">
             <h1>{{ controller_name }}</h1>
@@ -6,25 +31,6 @@
     {% else %}
         <div class="headerBanner">
             <h1>{{ controller_name }}</h1>
-            <div id="sidenav" class="sidenav">
-                <div class="">
-                    <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
-                </div>
-                {% if app.user %}
-                <div class="">
-                    <div class="avatar">
-                        <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
-                        <span>{{ app.user.pseudo }}</span>
-                    </div>
-                    <a class="link" href="{{path('users_account_accueil')}}">Mon compte</a>
-                    <a class="link" href="{{path('users_articles_accueil')}}">Mes Articles</a>
-                    <a class="link" href="{{path('app_logout')}}">Déconnexion</a>
-                {% else %}
-                    <a class="link" href="{{path('app_login')}}">Se connecter</a>
-                    <a class="link" href="{{path('app_register')}}">S'inscrire</a>
-                </div>
-                {% endif %}
-            </div>
         </div>
     {% endif %}
     <nav class="navbar">
@@ -42,7 +48,7 @@
             <li class="navlink">
                 <a class="link" href="{{path('app_categories_index')}}">Categories</a>
             </li>
-            <li class="navlink">
+            {# <li class="navlink">
                 <div class="drop">
                     <div class="link">Avant l'histoire</div>
                     <div class="drop_content">
@@ -79,16 +85,15 @@
                         <a href="{{path('app_accueil')}}">La Chine classic</a>
                     </div>
                 </div> 
-            </li>
+            </li> #}
             <li class="navlink">
-                <!-- Use any element to open the sidenav -->
                 {% if app.user %}
                     <a class="link avatar" href="#" onclick="openNav()">
-                            <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
-                            {{ app.user.name }} {{ app.user.firstname }}
+                        <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
+                            <span>{{ app.user.name }} {{ app.user.firstname }}</span>
                     </a>
                 {% else %}
-                    <a class="link" href="#" onclick="openNav()">Se connecter | S'inscrire</a>
+                    <a class="link" href="#" onclick="openNav()"><icon class="fa fa-user"></a>
                 {% endif %}
             </li>
         <ul>

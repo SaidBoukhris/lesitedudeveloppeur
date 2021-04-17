@@ -1,34 +1,41 @@
-/* NAVBAR */
+/* . */
+.header{
+    background-color: var(--dark);
+    padding: 1rem;
+}
 
 .headerBanner {
-    /* background-image: url("/assets//images/100.jpg");
+    background-image: url("/assets//images/100.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     width: 100%;
     max-width: 100%;
-    display: flex;
-    transition: all 1s;
+    padding: 1rem;
+    height: 250px;
+    display: flex;    
     flex-direction: column;
-    background-color: var(--green);
+    justify-content: center;
 }
 
 .headerBanner h1 {
+    background-color: var(--danger);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--light);
     padding: 1rem;
     margin: 0 auto;
+    border: 15px solid var(--dark);
+    border-radius: .5rem;
     text-transform: uppercase;
     text-align: center;
     width: 50%;
-    transition: all 1s;
-    background-color: var(--info);
 }
 
 nav {
-    background-color: var(--info);
+    background-color: var(--dark);
+    max-height: 100px;
     width: 100%;
     z-index: 100;
     padding: 1rem;
@@ -43,20 +50,20 @@ nav p {
 }
 
 .fixedHeader {
-    background: var(--info);
+    background: var(--dark);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 0 0 10px 1px #000000c7;
+    box-shadow: 0 0 10px 1px var(--white);
     transition: left 1s;
 }
 
 .fixedTitle{
+    background-color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--info);
     text-transform: uppercase;
     font-size: 1.2rem;
     width: 30%;
@@ -65,48 +72,47 @@ nav p {
 }
 
 .banner {
+    background-color: var(--danger);
     color: var(--white);
     font-weight: bold;
     text-align: center;
 }
 
 .navlinks {
-    background: var(--green);
+    background: var(--danger);
     display: flex;
     align-content: center;
     flex-wrap: wrap;
-    margin: 0 auto;
-    padding: 0;
     width: 100%;
     list-style-type: none;
 }
 
 .navlink {
-    text-align: center;
     display: flex;
     flex-direction: column;
-    margin: .5rem auto;
     gap: .5rem;
+    margin: .5rem auto;
+    text-align: center;
 }
 
 .link {
-    background:var(--white);
-    color: var(--info);
+    background-color:var(--dark);
+    color: var(--white);
     padding: 1rem;
     margin: 0.2rem;
     font-size: .7rem;
-    border-radius: 5px;
+    border-radius: .5rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .link:hover {
-    color: var(--white);
-    background: var(--info);
+    color: var(--white); 
+    background-color: var(--orange);
 }
 
 .navlink .link.avatar  {
-    color: var(--info);
     display: flex;
     gap: 0.5rem;
     justify-content: space-between;
@@ -114,7 +120,7 @@ nav p {
 
 .navlink .link.avatar:hover {
     color: var(--white);
-    background: var(--info);
+    background-color: var(--orange);
 }
 
 .navlink .link.avatar img {
@@ -122,14 +128,7 @@ nav p {
     width: 15px;
 }
 
-.navlink .link.avatar span {
-    color: var(--info);
-    display: flex;
-    align-items: center;
-}
-
 /* Dropdown */
-
 .drop_content {
     visibility: hidden;
     position: absolute;
@@ -143,41 +142,56 @@ nav p {
 }
 
 .drop_content a {
-    transition: background-color .5s;
-    background-color: #250303fb;
-    color: rgb(255, 255, 255);
+    color: var(--info);
+    background-color: var(--white);
+    transition: background-color .3s;
+    font-size: 15px;
     padding: 5px;
     border-radius: 5px;
-    border: 3px solid #250303fb;
+    border: 3px solid var(--white);
     text-decoration: none;
     display: block;
 }
 
 .drop_content a:hover {
+    color: var(--white);
     background-color: var(--info);
-    border: 3px solid #250303fb;
+    border: 3px solid var(--white);
 }
 
 .drop:hover .drop_content {
     visibility: visible;
 }
+/* END . */
 
-/* END NAVBAR */
+
 /* SIDENAV MENU */
-
 .sidenav {
+    background-color: var(--dark);
+    color: var(--white);
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #250303fb;
     overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
 }
 
-.sidenav .avatar {
-    background-color: var(--info);
+.sidenavBtn{
+    background-color: var(--danger);
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.sidenavAvatar {
+    background-color: var(--dark);
+    width: 100%;
+    border-radius: 3px;
     padding: 1rem;
     margin: 0 auto;
     display: flex;
@@ -187,53 +201,53 @@ nav p {
     gap: 1rem;
 }
 
-.sidenav .avatar img {
+.sidenavAvatar img {
     border-radius: 50%;
     width: 75px;
     height: 75px;
 }
 
-.sidenav .avatar span {
+.sidenavAvatar span {
+    text-transform: uppercase;
     text-align: center;
-    color: white;
+    /* color: var(--white); */
     font-size: 18px;
     margin: 0 auto;
 }
 
-.sidenav .link {
-    background-color: var(--info);
-    padding: 8px 8px 8px 32px;
+.sidenavLink {
+    /* background-color: var(--info); */
+    padding: 0;
     text-decoration: none;
-    font-size: 20px;
-    color: #ffffff;
+    font-size: 16px;
+    /* color: var(--white); */
     display: flex;
-    gap: 1rem;
-    transition: all .5s;
-}
-.sidenav .link:hover {
-    background-color: var(--info)6b;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.sidenavLink:hover {
+    /* background-color: var(--success); */
+}
 
 .sidenav .closebtn {
-    background-color: rgba(255, 0, 0, 0);
-    color: #ffffff;
-    position: relative;
-    top: -2.5rem;
+    color: var(--danger);
     display: flex;
-    justify-content: right;
+    justify-content:center;
     font-size: 56px;
-    transition: all .5s;
+    transition: .2s;
 }
+
 .sidenav .closebtn:hover {
-    color: #ffffff98;
+    transform: rotateZ(360deg);
 }
+
 #main {
-    /* transition: margin-left .5s; */
+    transition: margin-left .5s;
     padding: 0;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
     .sidenav {
         padding-top: 15px;
     }
