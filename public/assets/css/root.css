@@ -35,14 +35,13 @@
 
 html {
     font-family: "lato", sans-serif;
-    color: var(--gray);
 }
 
 body {
     min-height: 100%;
     padding: 0;
     line-height: 1.5;
-    background-color:  var(--light);
+    background-color:  var(--dark);
 }
 
 img {

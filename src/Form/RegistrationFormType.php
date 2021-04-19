@@ -23,9 +23,8 @@ class RegistrationFormType extends AbstractType
             ->add('name',TextType::class)
             ->add('firstname',TextType::class)
             ->add('pseudo',TextType::class)
-            ->add('avatar',UrlType::class, [
-                'attr' => ['class' => 'input-field'],
-            ])
+            ->add('avatar',UrlType::class)
+            ->add('banner',UrlType::class)
             ->add('email',EmailType::class)
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

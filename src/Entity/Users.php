@@ -68,6 +68,11 @@ class Users implements UserInterface
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $banner;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -248,5 +253,17 @@ class Users implements UserInterface
     {
         return $this->email;
         
+    }
+
+    public function getBanner(): ?string
+    {
+        return $this->banner;
+    }
+
+    public function setBanner(?string $banner): self
+    {
+        $this->banner = $banner;
+
+        return $this;
     }
 }

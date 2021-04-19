@@ -1,29 +1,55 @@
-<header class="header">
-{% if app.user %}
-    <div class="header-banner"style="background-image: url({{app.user.avatar}});">
-        <h1>{{ app.user.pseudo }}</h1>
+<header id="header" class="header">
+    <div id="sidenav" class="sidenav">
+        <a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+        <div class="sidenavBtn">
+            {% if app.user %}
+                <div class="sidenavAvatar">
+                    <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
+                    <span>{{ app.user.pseudo }}</span>
+                </div>
+                <div class="sidenavLink">
+                    <a class="link" href="#"><icon class="fa fa-edit"> ajouter article</a>
+                    <a class="link" href="#"><icon class="fa fa-plus"> ajouter vidéo</a>
+                    <a class="link" href="#"><icon class="fa fa-gears"> paramétres</a>
+                    <a class="link" href="{{path('app_logout')}}"><icon class="fa fa-power-off"> Déconnexion</a>
+                </div>
+            {% endif %}
+        </div>
     </div>
-{# {% else %}
-    <div class="header-banner">
-        <h1>{{ users.pseudo }}</h1>
-    </div> #}
-    <nav>
-        <p class="site-title">{{ app.user.pseudo }}</p>
-        <ul class="list">
-            <li class="list_li">
-                <a class="link" href="{{path('app_accueil')}}">Accueil</a>
+    {% if app.user is defined %}
+        <div class="headerBanner"style="background-image: url({{app.user.banner}});">
+            <h1>{{ app.user.pseudo }}</h1>
+        </div>
+    {% else %}
+        <div class="headerBanner"style="background-image: url({{app.user.avatar}});">
+            <h1>{{ app.user.pseudo }}</h1>
+        </div>
+    {% endif %}
+    <nav class="navbar">
+        <p class="banner">{{ app.user.pseudo }}</p>
+        <ul class="navlinks">
+            <li class="navlink">
+                {% if app.user %}
+                    <a class="link avatar" href="#" onclick="openNav()">
+                        <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
+                            <span>{{ app.user.name }} {{ app.user.firstname }}</span>
+                    </a>
+                {% else %}
+                    <a class="link" href="#" onclick="openNav()"><icon class="fa fa-user"></a>
+                {% endif %}
             </li>
-            <li class="list_li">
-                <a class="link" href="{{path('users_articles_accueil')}}">Mes Articles</a>
+            <li class="navlink">
+                <a class="link" href="{{path('users_articles_accueil')}}">Mes articles Articles</a>
             </li>
-            
-            {# <li class="list_li">
-                <a id="account" class="link account" href="#">{{ app.user.pseudo}} </a>
-            </li> #}
-            <li class="list_li">
-                <a class="link" href="{{path('app_logout')}}">Deconnexion</a>
+            <li class="navlink">
+                <a class="link" href="#">Mes videos</a>
+            </li>
+            <li class="navlink">
+                <a class="link" href="#">Mes catégories</a>
+            </li>
+            <li class="navlink">
+                <a class="link" href="{{path('app_accueil')}}">retour Accueil</a>
             </li>
         <ul>
     </nav>
-{% endif %}
 </header>

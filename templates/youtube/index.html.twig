@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
- 
-{% block title %}Best Youtube Video !
-{% endblock %}
- 
+
+{% block title %}Best Youtube Video !{% endblock %}
+
 {% block body %}
- 
+<section class="leftcolumn">
     <h2>Toutes les vidéos</h2>
     <div class="ytrow">
         {% for youtube in youtubes %}
@@ -18,10 +17,22 @@
             </div>
         {% endfor %}
     </div>
- 
-    <div class="ytform" id="addvideo">
-        <h2>Ajouter une vidéo</h2>
-        {{ form(form) }}
-    </div>
- 
-    {% endblock %}
+</section>
+
+<aside class="rightcolumn">
+    <h2>Ajouter une vidéo</h2>
+    {{ form_start(form) }}
+        <div class="ytform" id="addvideo">
+            <div class="url">
+            <label class="">Url de la vidéo</label>
+                {{ form_widget(form.url) }}
+            </div>
+            <div class="name">
+            <label class="">Titre de la vidéo</label>
+                {{ form_widget(form.name) }}
+            </div>
+            <button class="submit link">{{ button_label ??('Enregistrer') }}</button>
+        </div>
+    {{ form_end(form) }}
+</aside>
+{% endblock %}
