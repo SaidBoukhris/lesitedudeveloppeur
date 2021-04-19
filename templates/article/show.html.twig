@@ -4,14 +4,13 @@
 
 {% block body %}
 <div class="leftcolumn">
-    <article class="accueil">
+    <h2>{{ article.title }} </h2>
+    <div class="accueil">
         {% if article.users == app.user %}
             <a href="{{ path('users_articles_edit', {'slug': article.slug}) }}">Modifier</a>
         {% else %}
 
         {% endif %}
-        <h2>{{article.categories.name}}</h2>
-        <h3>{{ article.title }} </h3>
         
         <div class="page_articles_show_infos">
             <div class="page_articles_show_infos_date">
@@ -39,28 +38,25 @@
         <p>{{ article.content|raw }}</p>
 
         <a class="link" href="{{ path('app_articles_accueil') }}">Retour</a>
-    </article>
+    </div>
 </div>
 
 <div class="rightcolumn">
-    <aside class="accueil_aside">
-        <a href="{{ path('app_articles_accueil') }}">Retour</a>
-
-            {% if article.users == app.user %}
-                <a href="{{ path('users_articles_edit', {'slug': article.slug}) }}">Modifier</a>
-            {% else %}
-
-            {% endif %}
-        <h2>Derniers articles</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card_img"  style="background-image: url({{article.thumb}});">
-                    <h4 class="card_title"><b></b></h4> 
+    <h2>Derniers articles</h2>
+        {% if article.users == app.user %}
+            <a class="link" href="{{ path('users_articles_edit', {'slug': article.slug}) }}">Modifier</a>
+        {% endif %}
+        <a class="link" href="{{ path('app_articles_accueil') }}">Retour</a>
+        {% for category in categories %}
+        {% for article in category.articles %}
+            <a class="link" href="{{ path('app_articles_show', {'slug': article.slug}) }}">
+                        <div class="page_les_articles_aside_cards_card_img" style="background-image: url({{article.thumb}});">
+                        <h6 class="page_les_articles_aside_cards_card_title"><b>{{ article.title }}</b></h6> 
+                        <p>{{ article.content | u.truncate(100,' ... ',false) | raw}}</p>
+                        <p>{{ article.likes }} <icon class="fa fa-thumbs-o-up"></icon> | {{ article.dislikes }} <icon class="fa fa-thumbs-o-down"></icon></p>
                 </div>
-                <div class="card_body">
-                </div>
-            </div>
-        </div>
-    </aside>
+            </a>
+        {% endfor %}
+        {% endfor %}
 </div>
 {% endblock %}

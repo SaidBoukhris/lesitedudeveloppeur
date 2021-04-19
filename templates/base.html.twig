@@ -3,22 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="S.D.V"/>
-        <meta name="description" content="S.D.V | Le Site Du Dev"/>
+        <meta name="keywords" content="Saidtoweb"/>
+        <meta name="description" content="Saidtoweb est une agence web de la région toulousaine, spécialisée dans le développement de sites internet." />
         <meta name="author" content="Saïd Boukhris"/>
+        <meta property="og:locale:alternate" content="fr_FR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Saidtoweb Agence Web,Toulouse." />
+        <meta property="og:description" content="Saidtoweb est une agence web de la région toulousaine, spécialisée dans le développement de sites internet." />
         <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.ico')}}" />
-        {% block stylesheets %} 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/main.css')}}">
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/header.css')}}">
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/flash.css')}}">
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/root.css')}}">
-        {% endblock %}
-        <title>Le site du dev | {% block title %}{% endblock %} </title>
+        <title>Saidtoweb | {% block title %}{% endblock %} </title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/main.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/header.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/flash.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/root.css')}}">
     </head>
     
     <body>
-    
         <div id="main">
             {{ include('partials/_nav.html.twig')}}
             {{ include('partials/_flash_messages.html.twig')}}
@@ -27,7 +29,7 @@
             </div>
 
             <div class="footer">
-                <h2>Footer</h2>
+                <h1>Footer</h1>
             </div>
         </div>
 

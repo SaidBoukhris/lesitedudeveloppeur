@@ -37,16 +37,28 @@
         <p class="banner">{{ controller_name }}</p>
         <ul class="navlinks">
             <li class="navlink">
-                <a class="link" href="{{path('app_accueil')}}">À propos</a>
+                <a class="link avatar" href="{{path('app_accueil')}}">
+                <div><icon class="fa fa-home"></div>
+                <span>Accueil</span>
+                </a>
             </li>
             <li class="navlink">
-                <a class="link" href="{{path('youtube_home')}}">Youtube</a>
+                <a class="link avatar" href="{{path('youtube_home')}}">
+                <div><icon class="fa fa-play-circle"></div>
+                <span>Videos</span>
+                </a>
             </li>
             <li class="navlink">
-                <a class="link" href="{{path('app_articles_accueil')}}">Les Articles</a>
+                <a class="link avatar" href="{{path('app_articles_accueil')}}">
+                <div><icon class="fa fa-archive"></div>
+                <span>Articles</span>
+                </a>
             </li>
             <li class="navlink">
-                <a class="link" href="{{path('app_categories_index')}}">Categories</a>
+                <a class="link avatar" href="{{path('app_categories_index')}}">
+                <div><icon class="fa fa-folder"></div>
+                <span>Catégories</span>
+                </a>
             </li>
             {# <li class="navlink">
                 <div class="drop">

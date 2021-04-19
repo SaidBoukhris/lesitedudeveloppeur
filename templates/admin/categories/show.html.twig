@@ -3,11 +3,11 @@
 {% block title %}{{ categories.name }}{% endblock %}
 
 {% block body %}
-<article class="accueil">
+<div class="accueil">
     <h2>{{ categories.name }} </h2>
-</article>
+</div>
 
-<aside class="accueil_aside">
+<div class="accueil_aside">
     <a href="{{ path('admin_categories_accueil') }}">Retour</a>
     <a href="{{ path('admin_categories_edit', {'id': categories.id}) }}">Modifier</a>
     <h2>Les derniers articles</h2>
@@ -21,5 +21,5 @@
             </div>
         </div>
     </div>
-</aside>
+</div>
 {% endblock %}

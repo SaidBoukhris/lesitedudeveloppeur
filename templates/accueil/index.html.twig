@@ -65,14 +65,14 @@
     <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
 </article>
     
-<aside class="rightcolumn">
+<div class="rightcolumn">
     <div class="accueil_aside_cards">
     {% for category in categories %}
         <div class="accueil_aside_cards_card">
             <div class="accueil_aside_cards_card_img" style="background-image: url({{asset ('assets/images/carte.jpg')}});">
                 <h4 class="accueil_aside_cards_card_title">{{ category.name }}</h4> 
             </div>
-            <div class="accueil_aside_cards_card_body">
+            {# <div class="accueil_aside_cards_card_body">
                 <div class="accueil_aside_cards_card_body_article">
                     {% for article in category.articles %}
                         <a  class="accueil_aside_cards_card_body_article_link" href="{{ path('app_articles_show', {'slug': article.slug}) }}">{{ article.title }}</a>
@@ -84,7 +84,7 @@
                     </p>
                     {% endfor %}
                 </div>
-            </div>
+            </div> #}
         </div>
     {% else %}
         <div class="accueil_aside_cards_card">
