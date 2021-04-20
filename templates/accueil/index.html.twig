@@ -1,108 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}{{controller_name}}{% endblock %}
 
 {% block body %}
-<article class="leftcolumn">
-    <h2>Histoire Du Monde, c’est quoi ?</h2>
 
-    <p>Un petit coin du web né de l’envie de partager…</p>
-
-    <p>Des chroniques de lecture – les miennes. Et aussi celles d'articles trouvés sur internet et celles que je lis à la bibliothèque – parce que j’ai envie de savoir comment l'Histoire fait le Présent, et j’imagine que c’est pareil pour vous !</p>
-    <p>Quelques mots sur moi</p>
-   
-    <p>En 2009, j’ai quitté une vie professionnelle très (trop ?) intense et la région parisienne pour m’installer avec ma famille dans un petit village dans le sud-ouest. Depuis, j’ai vécu toutes sortes d’aventures… Beaucoup se sont déroulées au cours de randonnées à la découverte du patrimoine de cette région.</p>
-
-    <p>Histoire du Monde m’a accompagnée tout au long de ces années. J’espère que vous vous y sentirez bien. C’est parti…</p>
-
-    <p>Le début de la préhistoire est marquée par l’apparition des premiers organismes vivants. Puis ce sont les premiers dinosaures et les premiers primates qui voient le jours. Ensuite apparaissent les australopithèques, dont le squelette de Lucy est découvert en 1974 en Ethiopie. Plus tard, l’homo-habilis se développe en Afrique.</p>
-    <p>Il est capable de fabriquer et d’utiliser des outil. Bien après, l’homo-erectus commence à marcher complètement droit et debout dans la savane. Puis, l’homme de Neandertal voit le jour. Il commence à maîtriser le feu et à parler. Enfin, l’évolution donne vie à l’homme moderne qui colonise le monde, peint, sculpte et chasse. Il finit par se sédentariser pour écrire son histoire dans une nouvelle période historique nommée antiquité.</p>  
-    <p>Histoire du Monde, ce sera également (pour très bientôt) des récits historiques fictifs sous la forme de contes… de la naissance d’Anna en Mésopotamie en 10 000 avant Jésus-Christ à son installation sur Mars avec son chat Horus.</p>
-    <p><img src="{{ asset('assets/images/colonisation-homme-prehistoire.jpg')}}"></p>
-    <p>Le début de la préhistoire est marquée par l’apparition des premiers organismes vivants. Puis ce sont les premiers dinosaures et les premiers primates qui voient le jours. Ensuite apparaissent les australopithèques, dont le squelette de Lucy est découvert en 1974 en Ethiopie. Plus tard, l’homo-habilis se développe en Afrique.</p>
-    <p>Il est capable de fabriquer et d’utiliser des outil. Bien après, l’homo-erectus commence à marcher complètement droit et debout dans la savane. Puis, l’homme de Neandertal voit le jour. Il commence à maîtriser le feu et à parler. Enfin, l’évolution donne vie à l’homme moderne qui colonise le monde, peint, sculpte et chasse. Il finit par se sédentariser pour écrire son histoire dans une nouvelle période historique nommée antiquité.</p>  
-    <h2>La Préhistoire</h2>
-    <p>Le début de la préhistoire est marquée par l’apparition des premiers organismes vivants. Puis ce sont les premiers dinosaures et les premiers primates qui voient le jours. Ensuite apparaissent les australopithèques, dont le squelette de Lucy est découvert en 1974 en Ethiopie. Plus tard, l’homo-habilis se développe en Afrique.</p>
-    <p>Il est capable de fabriquer et d’utiliser des outil. Bien après, l’homo-erectus commence à marcher complètement droit et debout dans la savane. Puis, l’homme de Neandertal voit le jour. Il commence à maîtriser le feu et à parler. Enfin, l’évolution donne vie à l’homme moderne qui colonise le monde, peint, sculpte et chasse. Il finit par se sédentariser pour écrire son histoire dans une nouvelle période historique nommée antiquité.</p>  
-    <p><img src="{{ asset('assets/images/grottes-lascaux-prehistoire.jpg')}}"></p>    
-    <h2>L’ANTIQUITÉ</h2>  
-    <p>Histoire du Monde, ce sera également (pour très bientôt) des récits historiques fictifs sous la forme de contes… de la naissance d’Anna en Mésopotamie en 10 000 avant Jésus-Christ à son installation sur Mars avec son chat Horus.</p>
-    <p>Le début de la préhistoire est marquée par l’apparition des premiers organismes vivants. Puis ce sont les premiers dinosaures et les premiers primates qui voient le jours. Ensuite apparaissent les australopithèques, dont le squelette de Lucy est découvert en 1974 en Ethiopie. Plus tard, l’homo-habilis se développe en Afrique.</p>
-    <p>Il est capable de fabriquer et d’utiliser des outil. Bien après, l’homo-erectus commence à marcher complètement droit et debout dans la savane. Puis, l’homme de Neandertal voit le jour. Il commence à maîtriser le feu et à parler. Enfin, l’évolution donne vie à l’homme moderne qui colonise le monde, peint, sculpte et chasse. Il finit par se sédentariser pour écrire son histoire dans une nouvelle période historique nommée antiquité.</p> 
-    <p><img src="{{ asset('assets/images/mesopotamie-moyen-orient-antiquite-catal-huyuk-740x472.jpg')}}"></p>  
-    <p>Histoire du Monde, ce sera également (pour très bientôt) des récits historiques fictifs sous la forme de contes… de la naissance d’Anna en Mésopotamie en 10 000 avant Jésus-Christ à son installation sur Mars avec son chat Horus.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-    <p>L’Antiquité est une période de l’Histoire qui se situe entre 10 000 ans avant Jésus-Christ et 476 ans après Jésus-Christ. Au début de l’antiquité l’homme moderne commence à cultiver des champs et à construire des villes. Puis il invente la roue et l’écriture pour finalement se sédentariser. Naissent alors les religions, la différenciation sociale et les premières batailles.</p>      
-    <p>Puis la royauté s’instaurent et les premiers Empires se battissent. Pendant l’antiquité, l’homme ne cesse de vouloir conquérir de nouveaux territoires. C’est alors que de longues et fructueuses périodes de prospérité se succèdent à de périlleuses périodes de guerre.</p>      
-    <p><img src="{{ asset('assets/images/tour-babel-pieter-brueghel-768x576.jpg')}}"></p>
-    <p>L’Antiquité débute en 10 000 ans avant Jésus-Christ lorsque les hommes commencent à cultiver des champs en Mésopotamie. Cette période de l’histoire se termine en 476 ans après Jésus-Christ lorsque l’Empire Romain chute. Les articles ci-dessous sont classés par zones géographiques, civilisations et ordre chronologique.</p>
-</article>
-    
-<div class="rightcolumn">
-    <div class="accueil_aside_cards">
-    {% for category in categories %}
-        <div class="accueil_aside_cards_card">
-            <div class="accueil_aside_cards_card_img" style="background-image: url({{asset ('assets/images/carte.jpg')}});">
-                <h4 class="accueil_aside_cards_card_title">{{ category.name }}</h4> 
-            </div>
-            {# <div class="accueil_aside_cards_card_body">
-                <div class="accueil_aside_cards_card_body_article">
-                    {% for article in category.articles %}
-                        <a  class="accueil_aside_cards_card_body_article_link" href="{{ path('app_articles_show', {'slug': article.slug}) }}">{{ article.title }}</a>
-                        <p class="accueil_aside_cards_card_body_article_like">{{ article.likes }} j'aime | {{ article.dislikes }} j'aimes pas</p>
-
-                    {% else %}
-                    <p class="accueil_aside_cards_card_body_article_0">
-                        Aucun article dans cette catégorie
-                    </p>
-                    {% endfor %}
+<div class="leftcolumn">
+    {% for article in articles %}
+        <div class="article">
+            <h2>{{ article.title }}</h2>
+            <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
+                <div class="articleImage" style="background-image: url({{article.thumb}});"></div>
+            </a> 
+            <div class="articleBody">
+                <div class="articleMeta">
+                    <div>
+                        <icon class="fa fa-calendar"></icon> 
+                        Publié le {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
+                    </div>
+                    <div>
+                        <icon class="fa fa-folder"></icon> 
+                        Catégorie : {{ article.categories }}
+                    </div>
+                    <div>
+                        <icon class="fa fa-user"></icon> 
+                        Auteur : {{ article.users.pseudo }}
+                    </div>
+                    <div>
+                        {{ include('partials/_socialBar.html.twig')}}
+                    </div>
                 </div>
-            </div> #}
-        </div>
-    {% else %}
-        <div class="accueil_aside_cards_card">
-            <h4 class="accueil_aside_cards_card_title">Aucune catégorie</h4>
-        </div>
-        <div class="accueil_aside_cards_card">
-            <h4 class=""> 
-            {% if not app.user %}
-                <a href="{{ path('app_login') }}">Connecter vous pour ajouter un article</a>
-            {% endif %}</h4>
-        </div>
-        <div class="accueil_aside_cards_card">
-            <h4 class=""> 
-            {% if not app.user %}
-                <a href="{{ path('app_login') }}"><a href="{{ path('app_register') }}">Créer un compte</a>
-            {% endif %}</h4>
+                <div class="articleContent">
+                    {{ article.content | u.truncate(350,' ... ',false) | raw}}
+                </div>
+            </div>
         </div>
     {% endfor %}
+</div>
+
+<div class="rightcolumn">
+    <h2>Site Vitrine</h2>
+    <div>
+        <p><b>Le Pack "SEEME" est un site statique comprenant:</b> </p>
+        <p> • L'hébergement sur un serveur pour une année;</p>
+        <p> • L'enregistrement du nom de domaine pour une année;</p>
+        <p> • La création de plusieurs adresses e-mail;</p>
+        <p> • L'insertion d'une galerie photos;</p>
+        <p> • 5 pages de contenu;</p>
+        <p> • L'insertion d'une carte de localisation;</p>
     </div>
-</aside>
+    <h2>Site E-commerce</h2>
+    <div>
+        <p><b>Le Pack "PRO" est un site statique comprenant:</b> </p>
+        <p> • L'hébergement sur un serveur pour une année;</p>
+        <p> • L'enregistrement du nom de domaine pour une année;</p>
+        <p> • La création de plusieurs adresses e-mail;</p>
+        <p> • L'insertion d'une galerie photos;</p>
+        <p> • 10 pages de contenu;</p>
+        <p> • L'insertion d'une carte de localisation;</p>
+        <p> • Un référencement basique;</p>
+        <p> • 30-60 min de formation au CMS;</p>
+    </div>
+    <h2>Site Portfolio</h2>
+    <div>
+        <p><b>Le Pack "ART" est un site statique comprenant:</b> </p>
+        <p> • L'hébergement sur un serveur pour une année;</p>
+        <p> • L'enregistrement du nom de domaine pour une année;</p>
+        <p> • La création d'une adresse e-mail personnalisée;</p>
+        <p> • Une page de présentation;</p>
+        <p> • L'insertion d'une photo;</p>
+    </div>
+</div> 
+
 {% endblock %}

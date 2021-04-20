@@ -15,6 +15,18 @@
                     <a class="link" href="{{path('app_articles_accueil')}}">Les Articles</a>
                     <a class="link" href="{{path('app_categories_index')}}">Categories</a>
                     <a class="link" href="{{path('app_logout')}}">Déconnexion</a>
+                    <a style="background-color:#ff000065;"class="link" href="{{path('admin_accueil')}}">
+                        <div><icon class="fa fa-user-secret"></div> 
+                        Admin
+                    </a>
+                    <a style="background-color:#ff000065;"class="link" href="{{path('admin_articles_accueil')}}">
+                        <div><icon class="fa fa-user-secret"></div> 
+                        AdminART
+                    </a>
+                    <a style="background-color:#ff000065;"class="link" href="{{path('admin_categories_accueil')}}">
+                        <div><icon class="fa fa-user-secret"></div> 
+                        AdminCAT
+                    </a>
                 </div>
             {% else %}
                 <div class="sidenavLink">
@@ -45,19 +57,19 @@
             <li class="navlink">
                 <a class="link avatar" href="{{path('youtube_home')}}">
                 <div><icon class="fa fa-play-circle"></div>
-                <span>Videos</span>
+                <span>Tutos</span>
                 </a>
             </li>
             <li class="navlink">
                 <a class="link avatar" href="{{path('app_articles_accueil')}}">
                 <div><icon class="fa fa-archive"></div>
-                <span>Articles</span>
+                <span>Le blog</span>
                 </a>
             </li>
             <li class="navlink">
                 <a class="link avatar" href="{{path('app_categories_index')}}">
                 <div><icon class="fa fa-folder"></div>
-                <span>Catégories</span>
+                <span>Services</span>
                 </a>
             </li>
             {# <li class="navlink">
@@ -105,7 +117,7 @@
                             <span>{{ app.user.name }} {{ app.user.firstname }}</span>
                     </a>
                 {% else %}
-                    <a class="link" href="#" onclick="openNav()"><icon class="fa fa-user"></a>
+                    <a class="link avatar" href="#" onclick="openNav()"><icon class="fa fa-user"></a>
                 {% endif %}
             </li>
         <ul>

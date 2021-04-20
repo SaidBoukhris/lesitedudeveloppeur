@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Saidtoweb"/>
+        <meta name="description" content="Saidtoweb est une agence web de la région toulousaine, spécialisée dans le développement de sites internet." />
+        <meta name="author" content="Saïd Boukhris"/>
+        <meta property="og:locale:alternate" content="fr_FR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Saidtoweb Agence Web,Toulouse." />
+        <meta property="og:description" content="Saidtoweb est une agence web de la région toulousaine, spécialisée dans le développement de sites internet." />
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.ico')}}" />
+        <title>Saidtoweb | ADMIN {% block title %}{% endblock %} </title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/admin/css/main.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/admin/css/header.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/admin/css/root.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/main.css')}}">
+    </head>
+    
+    <body>
+
+        {{ include('admin/partials/_svg.html.twig')}}
+        {{ include('admin/partials/_nav.html.twig')}}
+        
+    <section class="page-content">
+        <section class="search-and-user">
+            <form>
+                <input type="search" placeholder="Search Pages...">
+                <button type="submit" aria-label="submit form">
+                    <svg aria-hidden="true">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </button>
+            </form>
+            <div class="admin-profile">
+                <span class="greeting">Hello admin</span>
+                <div class="notifications">
+                    <span class="badge">1</span>
+                    <svg>
+                        <use xlink:href="#users"></use>
+                    </svg>
+                </div>
+            </div>
+        </section>
+            {% block adminBody %}{% endblock %}
+    </section>
+
+        <footer class="page-footer">
+            <span>made by </span>
+            <a href="#" target="_blank">
+                <img width="24" height="24" src="https://assets.codepen.io/162656/george-martsoukos-small-logo.svg"
+                    alt="George Martsoukos logo">
+            </a>
+        </footer>
+
+        {% block javascripts %}
+            <script src="{{ asset('/assets/admin/js/script.js')}}"></script>
+        {% endblock %}
+
+    </body>
+</html>

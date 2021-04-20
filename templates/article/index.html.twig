@@ -7,69 +7,54 @@
 {% for message in app.flashes('success') %}
     <div class="alert alert-success" role="alert">{{ message }}</div>
 {% endfor %}
+
 <div class="leftcolumn">
-    <article class="page_les_articles">
-        <div class="page_les_articles_cards">
-            {% for article in articles %}
-                <div class="page_les_articles_cards_card">
-                    <a class="page_les_articles_cards_card_link_header" href="{{ path('app_articles_show', {'slug': article.slug}) }}">
-                        <div class="page_les_articles_cards_card_link_header_title">
-                            <h4 class="">{{ article.title }}</h4>
-                        </div>
-                        <div class="page_les_articles_cards_card_link_header_img" style="background-image: url({{article.thumb}});"></div>
-                    </a> 
-                    <div class="page_les_articles_cards_card_body">
-                    <div class="page_les_articles_cards_card_body_infos">
-                            <div class="page_les_articles_cards_card_body_infos_calendar">
-                                <icon class="fa fa-calendar"></icon> 
-                                Publié le {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
-                            </div>
-                            <div class="page_les_articles_cards_card_body_infos_folder">
-                                <icon class="fa fa-folder"></icon> 
-                                Catégorie : {{ article.categories }}
-                            </div>
-                            <div class="page_les_articles_cards_card_body_infos_author">
-                                <icon class="fa fa-user"></icon> 
-                                Auteur : {{ article.users.pseudo }}
-                            </div>
-                            <div class="page_les_articles_cards_card_body_content_social">
-                                {{ include('partials/_socialBar.html.twig')}}
-                            </div>
-                        </div>
-                        <div class="page_les_articles_cards_card_body_content">
-                            {{ article.content | u.truncate(350,' ... ',false) | raw}}
-                        </div>
+    {% for article in articles %}
+        <div class="article">
+            <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
+                <h2>{{ article.title }}</h2>
+                <div class="articleImage" style="background-image: url({{article.thumb}});"></div>
+            </a> 
+            <div class="articleBody">
+                <div class="articleMeta">
+                    <div>
+                        <icon class="fa fa-calendar"></icon> 
+                        Publié le {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
                     </div>
-                </div> 
-            {% endfor %}
+                    <div>
+                        <icon class="fa fa-folder"></icon> 
+                        Catégorie : {{ article.categories }}
+                    </div>
+                    <div>
+                        <icon class="fa fa-user"></icon> 
+                        Auteur : {{ article.users.pseudo }}
+                    </div>
+                    <div>
+                        {{ include('partials/_socialBar.html.twig')}}
+                    </div>
+                </div>
+                <div class="articleContent">
+                    {{ article.content | u.truncate(350,' ... ',false) | raw}}
+                </div>
+            </div>
         </div>
-    </article>
+    {% endfor %}
 </div>
 
 <div class="rightcolumn">
-    <div class="page_les_articles_aside">
-        <div class="page_les_articles_aside_cards">
-            {% for category in categories %}
-                <div class="said">
-                        <a class="" href="{{ path('app_categories_show', {'slug': category.slug}) }}">
-                            <h4 class="page_les_articles_aside_cards_card_categorie_title">{{ category.name }} ({{ category.articles | length}})</h4>
-                        </a>
-                    {# {% for article in category.articles %}
-                        <a class="" href="{{ path('app_articles_show', {'slug': article.slug}) }}">
-                            <div class="page_les_articles_aside_cards_card">
-                                    <div class="page_les_articles_aside_cards_card_img" style="background-image: url({{article.thumb}});">
-                                    <h6 class="page_les_articles_aside_cards_card_title"><b>{{ article.title }}</b></h6> 
-                                </div>
-                                <div class="page_les_articles_aside_cards_card_body">
-                                    <p>{{ article.content | u.truncate(100,' ... ',false) | raw}}</p>
-                                    <p>{{ article.likes }} <icon class="fa fa-thumbs-o-up"></icon> | {{ article.dislikes }} <icon class="fa fa-thumbs-o-down"></icon></p>
-                                </div>
-                            </div>
-                        </a>
-                    {% endfor %} #}
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+    {% for category in categories %}
+        <a href="{{ path('app_categories_show', {'slug': category.slug}) }}">
+            <h2>{{ category.name }} ({{ category.articles | length}})</h2>
+        </a>
+        {% for article in category.articles %}
+            <div style="background-image: url({{article.thumb}});">
+                <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
+                    <h3><b>{{ article.title }}</b></h3> 
+                    <p>{{ article.content | u.truncate(50,' ... ',false) | raw}}</p>
+                </a>
+            </div>
+        {% endfor %}
+    {% endfor %}
 </div>
+
 {% endblock %}
