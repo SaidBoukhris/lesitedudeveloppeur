@@ -1,18 +1,16 @@
 <header class="page-header">
     <nav>
-        <a href="#0" aria-label="forecastr logo" class="logo">
-            <svg width="140" height="49">
-                <use xlink:href="#logo"></use>
-            </svg>
-        </a>
         <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
             <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="#down"></use>
             </svg>
         </button>
+        <a href="{{path('app_accueil')}}" aria-label="forecastr logo" class="logo">
+            <img src="{{ asset('assets/images/logo/tlse-dev.png')}}"/>
+        </a>
         <ul class="admin-menu">
             <li class="menu-heading">
-                <h3>Admin</h3>
+                <h3>Administration</h3>
             </li>
             <li>
                 <a href="#0">
@@ -27,7 +25,7 @@
                     <svg>
                         <use xlink:href="#users"></use>
                     </svg>
-                    <span>Users</span>
+                    <span>Utilisateurs</span>
                 </a>
             </li>
             <li>
@@ -35,7 +33,7 @@
                     <svg>
                         <use xlink:href="#trends"></use>
                     </svg>
-                    <span>Trends</span>
+                    <span>Statistiques</span>
                 </a>
             </li>
             <li>
@@ -43,7 +41,7 @@
                     <svg>
                         <use xlink:href="#collection"></use>
                     </svg>
-                    <span>Collection</span>
+                    <span>Collections</span>
                 </a>
             </li>
             <li>
@@ -51,7 +49,7 @@
                     <svg>
                         <use xlink:href="#comments"></use>
                     </svg>
-                    <span>Comments</span>
+                    <span>Commentaires</span>
                 </a>
             </li>
             <li>
@@ -59,18 +57,18 @@
                     <svg>
                         <use xlink:href="#appearance"></use>
                     </svg>
-                    <span>Appearance</span>
+                    <span>Thémes</span>
                 </a>
             </li>
             <li class="menu-heading">
-                <h3>Settings</h3>
+                <h3>Paramétres</h3>
             </li>
             <li>
                 <a href="#0">
                     <svg>
                         <use xlink:href="#settings"></use>
                     </svg>
-                    <span>Settings</span>
+                    <span>Réglages</span>
                 </a>
             </li>
             <li>
@@ -86,7 +84,7 @@
                     <svg>
                         <use xlink:href="#charts"></use>
                     </svg>
-                    <span>Charts</span>
+                    <span>Graphiques</span>
                 </a>
             </li>
             <li>
@@ -94,14 +92,14 @@
                     <input type="checkbox" id="mode" checked>
                     <label for="mode">
                         <span></span>
-                        <span>Dark</span>
+                        <span>Nuit</span>
                     </label>
                 </div>
                 <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
                     <svg aria-hidden="true">
                         <use xlink:href="#collapse"></use>
                     </svg>
-                    <span>Collapse</span>
+                    <span></span>
                 </button>
             </li>
         </ul>

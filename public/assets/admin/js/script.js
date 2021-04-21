@@ -50,16 +50,16 @@ const html = document.documentElement;
         if (localStorage.getItem("dark-mode") === "false") {
             html.classList.add(lightModeClass);
             switchInput.checked = false;
-            switchLabelText.textContent = "Light";
+            switchLabelText.textContent = "Clair";
         }
 
         switchInput.addEventListener("input", function () {
             html.classList.toggle(lightModeClass);
             if (html.classList.contains(lightModeClass)) {
-                switchLabelText.textContent = "Light";
+                switchLabelText.textContent = "Clair";
                 localStorage.setItem("dark-mode", "false");
             } else {
-                switchLabelText.textContent = "Dark";
+                switchLabelText.textContent = "Sombre";
                 localStorage.setItem("dark-mode", "true");
             }
         });

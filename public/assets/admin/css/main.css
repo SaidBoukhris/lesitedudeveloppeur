@@ -8,7 +8,7 @@
             min-height: 100vh;
             padding: 30px;
             color: var(--page-content-txtColor);
-            background: var(--page-content-bgColor);
+            background: var(--dark);
         }
 
         .search-and-user {
@@ -113,14 +113,15 @@
             .page-content {
                 position: static;
                 width: 100%;
+                background-color: rgb(255, 0, 0);
             }
 
             .page-header {
-                padding: 10px;
+                padding: 0;
             }
 
             .page-header nav {
-                flex-direction: row;
+                flex-direction: column;
             }
 
             .page-header .logo {
@@ -154,10 +155,10 @@
                 margin-bottom: 12px;
             }
 
-            .page-header .admin-menu li:last-child button,
+            /* .page-header .admin-menu li:last-child button,
             .search-and-user .admin-profile .greeting {
                 display: none;
-            }
+            } */
 
             .page-content {
                 min-height: 0;
@@ -194,7 +195,7 @@
             }
         }
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 500px) {
             .page-content .grid>article {
                 grid-column: 1 / -1;
             }

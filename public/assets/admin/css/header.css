@@ -11,7 +11,7 @@
             padding-top: 20px;
             width: var(--page-header-width);
             color: var(--page-header-txtColor);
-            background: var(--page-header-bgColor);
+            background: var(--dark);
         }
 
         /*In case you prefer an absolutely positioned header that covers the full page height, add these styles*/

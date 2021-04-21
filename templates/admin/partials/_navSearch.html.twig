@@ -1,0 +1,27 @@
+<section class="search-and-user">
+    <form>
+        <input type="search" placeholder="Recherches ...">
+        <button type="submit" aria-label="submit form">
+            <svg aria-hidden="true">
+                <use xlink:href="#search"></use>
+            </svg>
+        </button>
+    </form>
+    <div class="admin-profile">
+        {% if app.user %}
+            <span class="greeting">{{ app.user.name }} {{ app.user.firstname }}</span>
+            <div class="notifications">
+                <span class="badge">1</span>
+                    <img style="width:50px;height:40px;border-radius:50%;" src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
+                </div>
+        {% else %}
+        <span class="greeting">ADMIN</span>
+        <div class="notifications">
+            <span class="badge">0</span>
+            <svg>
+                <use xlink:href="#users"></use>
+            </svg>
+        </div>
+        {% endif %}
+    </div>
+</section>

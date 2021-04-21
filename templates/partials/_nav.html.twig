@@ -41,9 +41,11 @@
             <h1>{{ controller_name }}</h1>
         </div>
     {% else %}
-        <div class="headerBanner">
-            <h1>{{ controller_name }}</h1>
+        {# <div class="headerBanner"style="background-image: url({{ asset('assets/images/logo/tlse-dev.png')}});"> #}
+        <div style="display:flex;align-items:center;gap:1rem;"><img style="width:15%;" src="{{ asset('assets/images/logo/tlse-dev.png')}}"/>
+            <h3 style="color:white;">Agence Digitale | Toulouse</h3>
         </div>
+        {# </div> #}
     {% endif %}
     <nav class="navbar">
         <p class="banner">{{ controller_name }}</p>
