@@ -27,6 +27,17 @@ class AdminArticlesController extends AbstractController
     }
 
     /**
+     * @Route("/{id<[0-9]+>}", name="show", methods={"GET"})
+     */
+    public function show(Article $articles): Response
+    {
+        return $this->render('admin/categories/show.html.twig', [
+            'controller_name' => $articles->getTitle(),
+            'articles' => $articles
+        ]);
+    }
+
+    /**
      * @Route("/ajouter", name="add", methods={"GET","POST"})
      * @Route("/{slug}/editer", name="edit", methods={"GET","POST"})
      */

@@ -1,28 +1,23 @@
 /* ALERT */
 
 .alert {
-    width: 50%;
-    height: 50px;
-    position: relative;
+    width: 100%;
     text-align: center;
-    padding: 0.75rem 1.25rem;
-    margin: 1rem auto;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
+    padding: .5rem;
 }
 
 .alert-success {
-    color: #cfe2d3;
+    color: var(--light);
     background-color: var(--success);
 }
 
 .alert-error {
-    color: #e6bfbf;
+    color: var(--light);
     background-color: var(--danger);
 }
 
 .alert-info {
-    color: #bfd1e6;
+    color: var(--light);
     background-color: var(--info);
 }
 

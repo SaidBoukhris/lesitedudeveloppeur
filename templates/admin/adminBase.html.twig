@@ -17,8 +17,8 @@
         <link rel="stylesheet"  type="text/css" href="{{ asset('assets/admin/css/main.css')}}">
         <link rel="stylesheet"  type="text/css" href="{{ asset('assets/admin/css/header.css')}}">
         <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/root.css')}}">
-        {# <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/main.css')}}">
-        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/header.css')}}"> #}
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/main.css')}}">
+        <link rel="stylesheet"  type="text/css" href="{{ asset('assets/css/header.css')}}">
     </head>
     
     <body>
@@ -28,7 +28,7 @@
             
             <section id="pageContent" class="page-content">
                 {{ include('admin/partials/_nav.html.twig')}}
-                {# {{ include('partials/_nav.html.twig')}} #}
+                {{ include('partials/_nav.html.twig')}}
                 {{ include('admin/partials/_navSearch.html.twig')}}
                 {% block adminBody %}{% endblock %}
             </section>

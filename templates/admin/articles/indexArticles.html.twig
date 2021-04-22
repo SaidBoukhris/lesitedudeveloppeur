@@ -3,40 +3,62 @@
 {% block title %}{{ controller_name }}{% endblock %}
 
 {% block adminBody %}
-<h2>{{ controller_name }} | {{ pluralize(articles|length, 'article') }} | <a href="{{ path('admin_articles_add')}}">Ajouter un article <span>&#8594;</span></a></h2>
 <section class="grid">
-{% for article in articles %}<article>
-    
-    
-        <div class="article">
-            <h2>{{ article.title }}</h2>
-            <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
-                <div class="articleImage" style="background-image: url({{article.thumb}});"></div>
-            </a> 
-            <div class="articleBody">
-                <div class="articleMeta">
-                    <div>
-                        <icon class="fa fa-calendar"></icon> 
-                        Publié le {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
+    {% if article is defined %}
+        {% for article in articles %}
+            <article>
+                
+                
+                    <div class="article">
+                        <h2>{{ article.title }}</h2>
+                        <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
+                            <div class="articleImage" style="background-image: url({{article.thumb}});"></div>
+                        </a> 
+                        <div class="articleBody">
+                            <div class="articleMeta">
+                                <div>
+                                    <icon class="fa fa-calendar"></icon> 
+                                    Publié le {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
+                                </div>
+                                <div>
+                                    <icon class="fa fa-folder"></icon> 
+                                    Catégorie : {{ article.categories }}
+                                </div>
+                                <div>
+                                    <icon class="fa fa-user"></icon> 
+                                    Auteur : {{ article.users.pseudo }}
+                                </div>
+                                <div>
+                                    {{ include('partials/_socialBar.html.twig')}}
+                                </div>
+                            </div>
+                            <div class="articleContent">
+                                {{ article.content | u.truncate(350,' ... ',false) | raw}}
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <icon class="fa fa-folder"></icon> 
-                        Catégorie : {{ article.categories }}
-                    </div>
-                    <div>
-                        <icon class="fa fa-user"></icon> 
-                        Auteur : {{ article.users.pseudo }}
-                    </div>
-                    <div>
-                        {{ include('partials/_socialBar.html.twig')}}
-                    </div>
-                </div>
-                <div class="articleContent">
-                    {{ article.content | u.truncate(350,' ... ',false) | raw}}
-                </div>
-            </div>
-        </div>
-    
-</article>{% endfor %}
-</sectio,>
+                
+            </article>
+        {% endfor %}
+    {% else %}
+        <article>
+            Pas encore d'articles
+        </article>
+        <article>
+            Pas encore d'articles
+        </article>
+        <article>
+            Pas encore d'articles
+        </article>
+        <article>
+            Pas encore d'articles
+        </article>
+        <article>
+            Pas encore d'articles
+        </article>
+        <article>
+            Pas encore d'articles
+        </article>
+    {% endif %}
+</section>
 {% endblock %}
