@@ -9,6 +9,7 @@
 {% endfor %}
 
 <div class="leftcolumn">
+            <h3>Articles à la une</h3>
     {% for article in articles %}
         <div class="article">
             <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
@@ -39,22 +40,25 @@
             </div>
         </div>
     {% endfor %}
-    {{ knp_pagination_render(articles) }}
+    <div class="navigation">
+        {{ knp_pagination_render(articles) }}
+    </div>
 </div>
 
 <div class="rightcolumn">
+            <h3>Dernières catégories</h3>
     {% for category in categories %}
         <a href="{{ path('app_categories_show', {'slug': category.slug}) }}">
-            <h2>{{ category.name }} ({{ category.articles | length}})</h2>
+            <h2>{{ category.name }}</h2>
         </a>
-        {% for article in category.articles %}
+        {# {% for article in category.articles %}
             <div style="background-image: url({{article.thumb}});">
                 <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
                     <h3><b>{{ article.title }}</b></h3> 
                     <p>{{ article.content | u.truncate(50,' ... ',false) | raw}}</p>
                 </a>
             </div>
-        {% endfor %}
+        {% endfor %} #}
     {% endfor %}
 </div>
 
