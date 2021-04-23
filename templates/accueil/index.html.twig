@@ -5,9 +5,33 @@
 {% block body %}
 
 <div class="leftcolumn">
+    <h2>Toulouse Développement, c'est quoi ?</h2>
+    <div>
+        <p>Le but de notre agence web est de contribuer au développement des grands projets sans délaisser les PME et PMI. Pour cela, notre équipe met à la disposition de ses client son expertise afin d’apporter de la valeur ajoutée à leur projet web. Notre agence web agit donc dans l’optique d’assurer la rentabilité de votre entreprise dans le web et cela sur le long terme.Notre agence digital est née par la volonté de répondre de manière efficace et polyvalente aux divers projets de clients Grands Comptes ainsi que les PME.</p>
+    </div>
+    <h2>Une agence web experte dans tous les domaines du digital</h2>
+    <div>
+        <p>La performance de l’équipe de notre agence web se justifie par les points suivants : <p> • Une équipe de spécialistes en référencement web, social media, rédaction web et création de sites web Une équipe soudée </p>
+        <p> • Une équipe à votre écoute et votre disposition pour réaliser (potentiellement dans l’urgence) la rédaction de vos contenus </p>
+        <p> • Une équipe qui sait s’adapter à tous les secteurs d’activités. </p>
+        <p> Vous avez une urgence? Sachez que notre agence web répond de manière réactive et efficace à la suite des demandes et des besoins des clients</p>
+    </div>
+    <h2>Les valeurs de notre agence web</h2>
+    <div>
+        <h3><em>Conseil</b></em></h3>
+        <p> • Un chef de projet expert en webmarketing vous accompagne et vous conseille dès le début de la collaboration. Nous parions sur le conseil webmarketing avec un suivi à long terme du projet client car nous sommes convaincus qu’une relation gagnant-gagnant est la clé de votre succès. agenceweb.fr agit comme un de vos meilleurs associés car elle fait du conseil une valeur clé. Ainsi, notre agence web offre toujours la solution qui correspond le mieux à vos besoins et à ceux du marché. Nos experts prennent alors en considération votre environnement et votre budget pour une intervention plus pertinente. </p>
+        <h3><em><b>Innovation</b></em></h3>
+        <p> • L’innovation est au cœur de l’activité d’agenceweb.fr. Notre agence de marketing digital développe et actualise l’expertise de ses associés grâce à un service de veille technologique qui prend entre 3 et 5 % du temps de toute l’équipe. Cet investissement permet à notre agence web de vous offrir le meilleur référencement professionnel et les meilleures technologies. Cet avantage marketing et commercial vous donnera toujours un temps d’avance sur vos concurrents.</p>
+        <h3><em>Partenariat</b></em></h3>
+        <p> • Notre agence web s’implique aussi dans les projets des clients au niveau pédagogique. Il s’agit ici de leur donner les connaissances techniques et théoriques suffisantes pour mieux comprendre et maîtriser leur projet web. Ainsi, notre agence digitale participe à l’élaboration et à la gestion raisonnée des projets de ses clients, dans un parfait esprit de partenariat.</p>
+    </div>
+</div>
+
+<div class="rightcolumn">
+    <h2>Derniers articles</h2>
     {% for article in articles %}
         <div class="article">
-            <h2>{{ article.title }}</h2>
+            <h3>{{ article.title }}</h3>
             <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
                 <div class="articleImage" style="background-image: url({{article.thumb}});"></div>
             </a> 
@@ -30,45 +54,11 @@
                     </div>
                 </div>
                 <div class="articleContent">
-                    {{ article.content | u.truncate(350,' ... ',false) | raw}}
+                    {{ article.content | u.truncate(100,' ... ',false) | raw}}
                 </div>
             </div>
         </div>
     {% endfor %}
-</div>
-
-<div class="rightcolumn">
-    <h2>Site Vitrine</h2>
-    <div>
-        <p><b>Le Pack "SEEME" est un site statique comprenant:</b> </p>
-        <p> • L'hébergement sur un serveur pour une année;</p>
-        <p> • L'enregistrement du nom de domaine pour une année;</p>
-        <p> • La création de plusieurs adresses e-mail;</p>
-        <p> • L'insertion d'une galerie photos;</p>
-        <p> • 5 pages de contenu;</p>
-        <p> • L'insertion d'une carte de localisation;</p>
-    </div>
-    <h2>Site E-commerce</h2>
-    <div>
-        <p><b>Le Pack "PRO" est un site statique comprenant:</b> </p>
-        <p> • L'hébergement sur un serveur pour une année;</p>
-        <p> • L'enregistrement du nom de domaine pour une année;</p>
-        <p> • La création de plusieurs adresses e-mail;</p>
-        <p> • L'insertion d'une galerie photos;</p>
-        <p> • 10 pages de contenu;</p>
-        <p> • L'insertion d'une carte de localisation;</p>
-        <p> • Un référencement basique;</p>
-        <p> • 30-60 min de formation au CMS;</p>
-    </div>
-    <h2>Site Portfolio</h2>
-    <div>
-        <p><b>Le Pack "ART" est un site statique comprenant:</b> </p>
-        <p> • L'hébergement sur un serveur pour une année;</p>
-        <p> • L'enregistrement du nom de domaine pour une année;</p>
-        <p> • La création d'une adresse e-mail personnalisée;</p>
-        <p> • Une page de présentation;</p>
-        <p> • L'insertion d'une photo;</p>
-    </div>
 </div> 
 
 {% endblock %}

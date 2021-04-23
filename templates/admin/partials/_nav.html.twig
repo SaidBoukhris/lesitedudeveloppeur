@@ -1,13 +1,5 @@
 <header class="page-header">
     <nav>
-        <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-            <svg width="20" height="20" aria-hidden="true">
-                <use xlink:href="#down"></use>
-            </svg>
-        </button>
-        <a href="{{path('app_accueil')}}" aria-label="forecastr logo" class="logo">
-            <img src="{{ asset('assets/images/logo/tlse-dev.png')}}"/>
-        </a>
         <ul class="admin-menu">
             <li class="menu-heading">
                 <h3>Administration</h3>
@@ -86,6 +78,12 @@
                     </svg>
                     <span>Graphiques</span>
                 </a>
+            </li>
+            <li>
+                <svg>
+                    <use xlink:href="#charts"></use>
+                </svg>
+                <a href="{{path('app_accueil')}}" aria-label="forecastr" class="">Retour à l'accueil</a>
             </li>
             <li>
                 <div class="switch">

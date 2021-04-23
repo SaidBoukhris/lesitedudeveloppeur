@@ -355,7 +355,7 @@
         .page-footer {
             font-size: 1rem;
             display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            align-items: left;
+            justify-content: right;
             margin-top: 10px;
         }

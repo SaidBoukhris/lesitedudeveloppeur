@@ -8,48 +8,79 @@
                     <span>{{ app.user.pseudo }}</span>
                 </div>
                 <div class="sidenavLink">
-                    <a class="link" href="#"><icon class="fa fa-edit"> ajouter article</a>
-                    <a class="link" href="#"><icon class="fa fa-plus"> ajouter vidéo</a>
-                    <a class="link" href="#"><icon class="fa fa-gears"> paramétres</a>
-                    <a class="link" href="{{path('app_logout')}}"><icon class="fa fa-power-off"> Déconnexion</a>
+                    <a class="link" href="{{path('users_account_accueil')}}">Mon compte</a>
+                    <a class="link" href="{{path('users_articles_accueil')}}">Mes Articles</a>
+                    <a class="link" href="{{path('app_accueil')}}">À propos</a>
+                    <a class="link" href="{{path('youtube_home')}}">Youtube</a>
+                    <a class="link" href="{{path('app_articles_accueil')}}">Les Articles</a>
+                    <a class="link" href="{{path('app_categories_index')}}">Categories</a>
+                    <a class="link" href="{{path('app_logout')}}">Déconnexion</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a style="background-color:#ff000065;"class="link" href="{{path('admin_accueil')}}">
+                            <div><icon class="fa fa-user-secret"></div> 
+                            Admin
+                        </a>
+                        <a style="background-color:#ff000065;"class="link" href="{{path('admin_articles_accueil')}}">
+                            <div><icon class="fa fa-user-secret"></div> 
+                            AdminART
+                        </a>
+                        <a style="background-color:#ff000065;"class="link" href="{{path('admin_categories_accueil')}}">
+                            <div><icon class="fa fa-user-secret"></div> 
+                            AdminCAT
+                        </a>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="sidenavLink">
+                    <a class="link" href="{{path('app_login')}}">Se connecter</a>
+                    <a class="link" href="{{path('app_register')}}">S'inscrire</a>
                 </div>
             {% endif %}
         </div>
     </div>
     {% if app.user is defined %}
         <div class="headerBanner"style="background-image: url({{app.user.banner}});">
-            <h1>{{ app.user.pseudo }}</h1>
-        </div>
-    {% else %}
-        <div class="headerBanner"style="background-image: url({{app.user.avatar}});">
-            <h1>{{ app.user.pseudo }}</h1>
+            <div class="logo">
+                <h1>{{ app.user.pseudo }}</h1>
+            </div>
         </div>
     {% endif %}
     <nav class="navbar">
-        <p class="banner">{{ app.user.pseudo }}</p>
+        <p class="banner">ksjgh slghsoegsle</p>
         <ul class="navlinks">
-            <li class="navlink">
-                {% if app.user %}
+            <div>
+                <li class="navlinkLogo">
+                    <a class="" href="{{path('app_accueil')}}">
+                    <img style="" src="{{ asset('assets/images/logo/tlse-dev.png')}}"/>
+                    </a>
+                </li>
+            </div>
+            <div>
+                <li class="navlink">
+                    <a class="link avatar" href="{{path('youtube_home')}}">
+                    <div><icon class="fa fa-play-circle"></div>
+                    <span>Tutos</span>
+                    </a>
+                </li>
+                <li class="navlink">
+                    <a class="link avatar" href="{{path('app_articles_accueil')}}">
+                    <div><icon class="fa fa-archive"></div>
+                    <span>Le blog</span>
+                    </a>
+                </li>
+                <li class="navlink">
+                    <a class="link avatar" href="{{path('app_categories_index')}}">
+                    <div><icon class="fa fa-folder"></div>
+                    <span>Services</span>
+                    </a>
+                </li>
+                <li class="navlink">
                     <a class="link avatar" href="#" onclick="openNav()">
                         <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
-                            <span>{{ app.user.name }} {{ app.user.firstname }}</span>
+                        <span>{{ app.user.name }} {{ app.user.firstname }}</span>
                     </a>
-                {% else %}
-                    <a class="link" href="#" onclick="openNav()"><icon class="fa fa-user"></a>
-                {% endif %}
-            </li>
-            <li class="navlink">
-                <a class="link" href="{{path('users_articles_accueil')}}">Mes articles Articles</a>
-            </li>
-            <li class="navlink">
-                <a class="link" href="#">Mes videos</a>
-            </li>
-            <li class="navlink">
-                <a class="link" href="#">Mes catégories</a>
-            </li>
-            <li class="navlink">
-                <a class="link" href="{{path('app_accueil')}}">retour Accueil</a>
-            </li>
+                </li>
+            </div>
         <ul>
     </nav>
 </header>

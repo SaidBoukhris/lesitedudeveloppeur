@@ -38,20 +38,17 @@
             {% endif %}
         </div>
     </div>
-    {% if article.thumb is defined %}
-        <div class="headerBanner"style="background-image: url({{article.thumb}});">
-            <h1>{{ controller_name }}</h1>
-        </div>
-    {% else %}
-        {# <div class="headerBanner"style="background-image: url({{ asset('assets/images/logo/tlse-dev.png')}});"> #}
-        <div style="display:flex;align-items:center;gap:1rem;"><img style="width:15%;" src="{{ asset('assets/images/logo/tlse-dev.png')}}"/>
-            <h3 style="color:white;">Agence Digitale | Toulouse</h3>
-        </div>
-        {# </div> #}
-    {% endif %}
     <nav class="navbar">
         <p class="banner">{{ controller_name }}</p>
         <ul class="navlinks">
+            <div>
+                <li class="navlinkLogo">
+                    <a href="{{path('app_accueil')}}">
+                    <img style="" src="{{ asset('assets/images/logo/tlse-dev.png')}}"/>
+                    </a>
+                </li>
+            </div>
+            <div>
             <li class="navlink">
                 <a class="link avatar" href="{{path('app_accueil')}}">
                 <div><icon class="fa fa-home"></div>
@@ -76,54 +73,30 @@
                 <span>Services</span>
                 </a>
             </li>
-            {# <li class="navlink">
-                <div class="drop">
-                    <div class="link">Avant l'histoire</div>
-                    <div class="drop_content">
-                        <a href="{{path('app_accueil')}}">Les fondations</a>
-                        <a href="{{path('app_accueil')}}">L'Homo sapiens</a>
-                        <a href="{{path('app_accueil')}}">Au seuil de la civilisation</a>
-                    </div>
-                </div> 
-            </li>
-            <li class="navlink">
-                <div class="drop">
-                    <div class="link">Les civilisations</div>
-                    <div class="drop_content">
-                        <a href="{{path('app_accueil')}}">Les premières traces de la civilisation</a>
-                        <a href="{{path('app_accueil')}}">La mésopotamie ancienne</a>
-                        <a href="{{path('app_accueil')}}">L'Egypte ancienne</a>
-                        <a href="{{path('app_accueil')}}">Intrus et envahisseurs</a>
-                        <a href="{{path('app_accueil')}}">Les commencement de la civilisation en Asie du sud</a>
-                        <a href="{{path('app_accueil')}}">Les autres mondes des Temps anciens</a>
-                        <a href="{{path('app_accueil')}}">Transformations</a>
-                    </div>
-                </div> 
-            </li>
-            <li class="navlink">
-                <div class="drop">
-                    <div class="link">L'âge classique</div>
-                    <div class="drop_content">
-                        <a href="{{path('app_accueil')}}">Rebâtir le monde ancien</a>
-                        <a href="{{path('app_accueil')}}">Les grecs</a>
-                        <a href="{{path('app_accueil')}}">Le monde hellénistique</a>
-                        <a href="{{path('app_accueil')}}">Rome</a>
-                        <a href="{{path('app_accueil')}}">Le christianisme et la transition occidentale</a>
-                        <a href="{{path('app_accueil')}}">L'Inde classique</a>
-                        <a href="{{path('app_accueil')}}">La Chine classic</a>
-                    </div>
-                </div> 
-            </li> #}
             <li class="navlink">
                 {% if app.user %}
                     <a class="link avatar" href="#" onclick="openNav()">
                         <img src="{{ app.user.avatar }}" alt="{{ app.user.pseudo }}">
-                            <span>{{ app.user.name }} {{ app.user.firstname }}</span>
+                        <span>{{ app.user.name }} {{ app.user.firstname }}</span>
                     </a>
                 {% else %}
                     <a class="link avatar" href="#" onclick="openNav()"><icon class="fa fa-user"></a>
                 {% endif %}
             </li>
+            </div>
         <ul>
     </nav>
+    {% if article.thumb is defined %}
+        <div class="headerBanner"style="background-image: url({{article.thumb}});">
+            <div class="logo">
+                <h1>{{ controller_name }}</h1>
+            </div>
+        </div>
+    {% else %}
+        <div class="headerBanner">
+            <div class="logo">
+                <h1>{{ controller_name }}</h1>
+            </div>
+        </div>
+    {% endif %}
 </header>
