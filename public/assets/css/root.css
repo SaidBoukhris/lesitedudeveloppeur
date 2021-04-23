@@ -81,7 +81,7 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: var(--info);
+    color: var(--info-transparent);
 }
 
 button {
