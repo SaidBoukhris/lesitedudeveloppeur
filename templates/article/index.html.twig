@@ -4,20 +4,19 @@
 
 {% block body %}
 
-{% for message in app.flashes('success') %}
-    <div class="alert alert-success" role="alert">{{ message }}</div>
-{% endfor %}
-
-<div class="leftcolumn">
-            <h3>Articles à la une</h3>
+<div class="left">
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+    <h3 class="title">Articles à la une</h3>
     {% for article in articles %}
-        <div class="article">
+        <div class="card">
             <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
                 <h2>{{ article.title }}</h2>
-                <div class="articleImage" style="background-image: url({{article.thumb}});"></div>
+                <div class="cardImage" style="height:300px;background-image: url({{article.thumb}});"></div>
             </a> 
-            <div class="articleBody">
-                <div class="articleMeta">
+            <div class="cardBody">
+                <div class="cardMeta">
                     <div>
                         <icon class="fa fa-calendar"></icon> 
                         Publié le {{ article.createdAt ? article.createdAt|date('d/m/Y') : '' }}
@@ -34,7 +33,7 @@
                         {{ include('partials/_socialBar.html.twig')}}
                     </div>
                 </div>
-                <div class="articleContent">
+                <div class="cardContent">
                     {{ article.content | u.truncate(350,' ... ',false) | raw}}
                 </div>
             </div>
@@ -45,21 +44,17 @@
     </div>
 </div>
 
-<div class="rightcolumn">
-            <h3>Dernières catégories</h3>
-    {% for category in categories %}
-        <a href="{{ path('app_categories_show', {'slug': category.slug}) }}">
-            <h2>{{ category.name }}</h2>
-        </a>
-        {# {% for article in category.articles %}
-            <div style="background-image: url({{article.thumb}});">
-                <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
-                    <h3><b>{{ article.title }}</b></h3> 
-                    <p>{{ article.content | u.truncate(50,' ... ',false) | raw}}</p>
-                </a>
-            </div>
-        {% endfor %} #}
+<div class="right">
+    <h3 class="title">Derniers articles</h3>
+    {% for article in articles %}
+        <div style="background-image: url({{article.thumb}});">
+            <a href="{{ path('app_articles_show', {'slug': article.slug}) }}">
+                <h3><b>{{ article.title }}</b></h3> 
+                <p>{{ article.content | u.truncate(50,' ... ',false) | raw}}</p>
+            </a>
+        </div>
     {% endfor %}
+
 </div>
 
 {% endblock %}

@@ -10,15 +10,15 @@
     border-radius: 5px;
 }
 .headerBanner {
-    background-image: url('/assets/images/100.jpg');
+    /* background-image: url('/assets/images/100.jpg');*/
+    background-size: contain;  
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
     width: 100%;
     max-width: 100%;
     display: flex;
     align-items: center;
-    height: 16rem;
+    height: 20em;
     padding: 1rem;
 }
 
@@ -198,10 +198,6 @@ nav p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.sidenavLink:hover {
-    /* background-color: rgba(80, 198, 228, 0.274); */
 }
 
 .sidenav .closebtn {

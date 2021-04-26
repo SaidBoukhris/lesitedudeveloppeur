@@ -23,8 +23,9 @@ class AppFixtures extends Fixture
                     -> setPassword('$argon2id$v=19$m=65536,t=4,p=1$1pSOJqtthbU19n4gTPlAHw$FVRRRtJuhHzy7jCHLeNrVoi4X/vjWAqHQF4eC6x2BYA')
                     -> setAvatar("https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
                     -> setBanner("https://images.unsplash.com/photo-1530228648323-ffb9f3f8f2c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGJhbm5lcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=60");
-        $manager    -> persist($user);   
+            $manager    -> persist($user);   
         }
+
         for($j = 1 ; $j <= 10 ; $j++) {
             $categorie = new Categories();
             $categorie  -> setName("categorie ".$j);
@@ -58,12 +59,14 @@ class AppFixtures extends Fixture
                 $manager-> persist($article);
             }
         }
-        for($l = 1 ; $l <= 20 ; $l++) {
+
+        for($l = 1 ; $l <= 100 ; $l++) {
             $yt = new Youtube();
             $yt         -> setUrl("https://www.youtube.com/watch?v=lTRiuFIWV54")
                         -> setName("v".$l);
             $manager    -> persist($yt);
         }
+        
         $manager->flush();
     }
 }

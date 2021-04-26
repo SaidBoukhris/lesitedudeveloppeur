@@ -26,10 +26,10 @@ class YoutubeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $youtube = $form->getData();
- 
+
             $em->persist($youtube);
             $em->flush();
- 
+
             return $this->redirectToRoute('youtube_home');
         }
 

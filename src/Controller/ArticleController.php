@@ -30,7 +30,7 @@ class ArticleController extends AbstractController
         );
         return $this->render('article/index.html.twig', [
             'articles' => $articles,
-            'controller_name' => 'Les Articles',
+            'controller_name' => 'Devenir un meilleur développeur',
             'categories' => $categories->findAll()
         ]);
     }

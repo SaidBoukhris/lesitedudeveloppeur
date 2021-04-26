@@ -11,7 +11,7 @@
     --info: #17a3b8;
     --info-transparent: #17a3b8b4;
     --white: #fff;
-    --light: #f8f9fa;
+    --light: #dddddd;
     --primary: #007bff;
     --brown: #582f00;
     --secondary: #6c757d;
@@ -71,7 +71,8 @@ ul {
 img {
     max-width: 100%;
     vertical-align: middle;
-    border-style: none; }
+    border-style: none; 
+}
 
 a {
     color: inherit;

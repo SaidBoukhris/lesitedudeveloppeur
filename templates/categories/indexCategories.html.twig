@@ -3,31 +3,37 @@
 {% block title %}{{ controller_name }}{% endblock %}
 
 {% block body %}
-<div class="leftcolumn">
+<div class="left">
     {% for category in categories %}
-    <div class="card">
         <a href="{{ path('app_categories_show', {'slug': category.slug}) }}">
             <h2>{{ category.name }}</h2>
+        </a>
             <h5>{{ pluralize(category.articles|length, 'article') }}</h5>
             {% for articles in category.articles %}
-            <div class="fakeimg" style="background-image: url({{articles.thumb}});"></div>
+        <a href="{{ path('app_articles_show', {'slug': articles.slug}) }}">
+            <div class="img" style="background-image: url({{articles.thumb}});"></div>
                 <p>{{ articles.title }}</p>
             {% else %}
-            <div class="fakeimg" style="background-image: url({{asset('assets/images/carte.jpg')}});"></div>
+            <div class="" style="background-image: url({{asset('assets/images/carte.jpg')}});"></div>
                 <p>Aucun article dans cette catégorie</p>
             {% endfor %}
         </a>
-    </div>
     {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(categories) }}
+    </div>
 </div>
-<div class="rightcolumn">
+<div class="right">
     {% for category in categories %}
         <div class="card">
             <h2>{{ category.name }}</h2>
-            <div class="fakeimg" style="height:50px;background-image: url({{asset('assets/images/carte.jpg')}});">
+            <div class="" style="height:50px;background-image: url({{asset('assets/images/carte.jpg')}});">
             <a href="{{ path('app_categories_show', {'slug': category.slug}) }}" style="color: white;background-color:black;">{{ pluralize(category.articles|length, 'article')}}</a></div>
             
         </div>
     {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(categories) }}
+    </div>
 </div>
 {% endblock %}

@@ -3,12 +3,13 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block body %}
-<div class="leftcolumn">
-    <h2>{{ article.title }} </h2>
+<div class="left">
+    {# <h2>{{ article.title }}</h2> #}
+    <div class="img"style="height:500px;background-image: url({{article.thumb}});"></div>
+    <div class="articleMetaRow">
     {% if article.users == app.user %}
         <a class="link" href="{{ path('users_articles_edit', {'slug': article.slug}) }}">Modifier</a>
     {% endif %}
-    <div class="articleMeta">
         <p>
             {% if article.modifiedAt is not null %}
             <icon class="fa fa-calendar"></icon> Modifié le {{ article.modifiedAt ? article.modifiedAt|date('d/m/Y à H:i:s') : '' }}
@@ -20,34 +21,29 @@
             <icon class="fa fa-user"></icon> 
             {{ article.users.pseudo }}
         </a>
+        <a href="#">
+            <icon class="fa fa-folder"></icon> 
+            {{ article.categories.name }}
+        </a>
         <div>
             {{ article.likes }} <icon class="fa fa-thumbs-o-up"></icon>
-        </div> 
-        <div>
-            {{ article.dislikes }} <icon class="fa fa-thumbs-o-down"></icon></div>
+            {{ article.dislikes }} <icon class="fa fa-thumbs-o-down"></icon>
         </div>
-        {{ include('/partials/_socialBar.html.twig')}}
-        <div>{{ article.content|raw }}</div>
-
+    </div>
+    {{ include('/partials/_socialBar.html.twig')}}
+    <div>{{ article.content|raw }}</div>
     <a class="link" href="{{ path('app_articles_accueil') }}">Retour</a>
 </div>
 
-<div class="rightcolumn">
-    <h2>Derniers articles</h2>
-    <a class="link" href="{{ path('app_articles_accueil') }}">Retour</a>
-    {% for category in categories %}
-        {% for article in category.articles %}
-            <a class="link" href="{{ path('app_articles_show', {'slug': article.slug}) }}">
-                <div style="background-image: url({{article.thumb}});">
-                    <h3><b>{{ article.title }}</b></h3> 
-                    <div>
-                        {{ article.content | u.truncate(100,' ... ',false) | raw}}
-                        <p>{{ article.likes }} <icon class="fa fa-thumbs-o-up"></icon></p>
-                        <p>{{ article.dislikes }} <icon class="fa fa-thumbs-o-down"></icon></p>
-                    </div>
-                </div>
+<div class="right">
+    <h3 class="title">Dans la même catégories</h3>
+    {% for articles in categories.article %}
+        <div style="background-image: url({{articles.thumb}});">
+            <a href="{{ path('app_articles_show', {'slug': articles.slug}) }}">
+                <h3><b>{{ articles.title }}</b></h3> 
+                <p>{{ articles.content | u.truncate(50,' ... ',false) | raw}}</p>
             </a>
-        {% endfor %}
+        </div>
     {% endfor %}
 </div>
 {% endblock %}
